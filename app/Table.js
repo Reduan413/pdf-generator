@@ -45,7 +45,7 @@ export default function Table() {
           <Text style={[styles.cell, styles.header]}>Column 4 Header</Text>
         </View>
         {
-          Array(200).fill(0).map((_, index) => (
+          Array(20).fill(0).map((_, index) => (
             <View wrap={false} style={[styles.row]}>
               {Array(4).fill(0).map((_, index2) => (
                 <Text style={[styles.cell]}>Column {index2} Row {index}</Text>

@@ -1,18 +1,18 @@
 "use client"
-import { PDFViewer } from "@react-pdf/renderer";
-import Image from "next/image";
-import MyDocument from "./MyDocument";
-import Table from "./Table";
+
+import Link from "next/link";
+import PdfView from "./pdf-view/Page";
+
 
 export default function Home() {
+  const handlePdf = () => {
+    const pdfBlob = new Blob([<PdfView />], { type: 'application/pdf' }, `My PDF.pdf`);
+    console.log("pdfBlob",pdfBlob)
+  }
   return (
     <>
-      <PDFViewer style={{ height: '100vh', width: '100vw' }}>
-        <Table />
-      </PDFViewer>
-      <PDFViewer style={{ height: '100vh', width: '100vw' }}>
-        <MyDocument />
-      </PDFViewer>
+      <button onClick={handlePdf}>Pdf</button>
+      <Link href="/text-editor">Text Editor</Link>
     </>
   );
 }
